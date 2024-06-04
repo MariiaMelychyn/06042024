@@ -1,0 +1,367 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #757575;
+    background-color: #fffffff;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    @media screen and (min-width: 480px) {
+      width: 480px;
+    }
+  
+    @media screen and (min-width: 768px) {
+      width: 768px;
+    }
+  
+    @media screen and (min-width: 1200px) {
+      width: 1200px;
+    }
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .web {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+  
+    letter-spacing: 0.03em;
+  
+    color: #2196f3;
+  }
+  .studio {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+  
+    color: #000000;
+  }
+  .nav {
+    display: flex;
+    gap: 50px;
+    margin-left: 93px;
+  }
+  
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .contact {
+      gap: 50px;
+      margin-left: 250px;
+    }
+  }
+  
+  .nav__link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: #212121;
+  }
+  .nav__contact {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: #757575;
+  }
+  .nav__link:hover,
+  .nav__link:focus,
+  .nav__contact:hover,
+  .nav__contact:focus {
+    color: #2196f3;
+  }
+  
+  
+  
+  
+  
+  /* 1) Перше робимо мобільне меню яке буде хедер ховати до 768 рх а буде до 768рх відображатись модальне вікно */
+  
+  /* СКРИВАЄМО ОСНОВНЕ МЕНЮ */
+  @media screen and (max-width: 767px) {
+    .header-menu {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 767px) {
+    .header-menu {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+    }
+  }
+  /*  */
+  
+  /* МЕНЮ ВІДКРИТТЯ -КНОПКА*/
+  .menu-toggle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 0;
+    background-color: white;
+  }
+  @media screen and (min-width: 768px) {
+    .menu-toggle {
+      display: none;
+    }
+  }
+  /*  */
+  
+  /* 2) задаємо логотипу та моб меню відступи  */
+  @media screen and (max-width: 768px) {
+    .header {
+      justify-content: space-between;
+    }
+  }
+  
+  /* 3) стилі до кнопки закриття */
+  .button-toggle {
+    position: absolute;
+    top: 10px;
+    right: 65px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: white;
+  
+    &:hover {
+      cursor: pointer;
+  
+      & .button-toggle__icone {
+        fill: red;
+      }
+    }
+  }
+  
+  .button-toggle__icone {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: fill 250ms $timingFunction;
+  }
+  
+  /* ЗАДАЄМО СТИЛІ ДО menu-container  */
+  
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    transform: translateX(100%);
+    /* transition: transform 500ms linear; */
+  }
+  
+  .menu-container.is-open {
+    transform: translateX(0);
+  }
+  
+  /* ЗАДАЄМО СТИЛІ НА НА МОДАЛЬНЕ ВІКНО*/
+  .current {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 0.02em;
+  
+    color: #212121;
+  }
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+  .soc {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+  
+    letter-spacing: 0.02em;
+  
+    color: #2196f3;
+  }
+  .tel {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 40px;
+  
+    letter-spacing: 0.02em;
+  
+    color: #2196f3;
+  }
+  .email {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+  
+    color: #757575;
+  }
+
+
+  /* thema */
+  .checkbox-thumb {
+    position: relative;
+    width: 50px;
+    height: 16px;
+    overflow: hidden;
+    border: 1px solid red;
+    border-radius: 15px;
+}
+
+.checkbox {
+    appearance: none;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.checkbox-circle {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translate(0, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    transition: 350ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.checkbox:checked ~ .checkbox-circle {
+    transform: translate(30px, -50%);
+}
+
+body.light {
+    background-color: aqua;
+}
+
+body.dark {
+    background-color: grey;
+}
+
+/* body.light .title {
+    background-color: red;
+    color: white;
+}
+
+body.light .text {
+    background-color: red;
+    color: white;
+}
+
+body.dark .title {
+    background-color: white;
+    color: black;
+}
+
+body.dark .text {
+    background-color: white;
+    color: black;
+} */
+
+
+
+
+/* acordeeon */
+.question-list-accordion {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin: 20px auto; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question-list-accordion li {
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    cursor: pointer;
+    padding: 20px 30px; 
+    border-bottom: 1px solid #ddd;
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #333; 
+}
+
+.accordion-header::after {
+    content: '\25B6'; /* Символ стрілки вправо */
+    font-size: 14px;
+    position: absolute; 
+    right: 20px;
+    transition: transform 0.3s ease; /* Додали анімацію */
+}
+
+.accordion-content.active .accordion-header::after {
+    transform: rotate(-90deg); /* Повернули стрілку у гору */
+}
+
+.accordion-content {
+    padding: 20px; 
+    border-bottom: 1px solid #ddd;
+    display: none;
+    border-top: none; 
+}
+
+.accordion-content.active {
+    display: block; 
+}
+
+
+  /* map */
+  #map {
+    height: 400px; /* Висота карти */
+    width: 100%; /* Ширина карти, 100% означає, що вона буде розтягнута на всю ширину батьківського контейнера */
+    margin: 0; /* Відступи від країв видаляються, щоб карта була зліплена з країв */
+    padding: 0; /* Внутрішні відступи видаляються, щоб карта була зліплена з країв */
+    border: none; /* Видаляється межа, яка може відображатися навколо карти */
+    border-radius: 5px; /* Закругленість кутів */
+    overflow: hidden; /* Заборона виходу контенту за межі */
+}

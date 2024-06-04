@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header container">
+  
+        
+        <a href=""><img width="145" src="./images/logotype.svg" alt="logotype"></a>
+              <!--  -->
+              <button class="menu-toggle js-open-menu" 
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+          <svg class="menu__batton" height="24" width="24">
+              <use href="./images/symbol-defs.svg#menu_btn"></use>
+          </svg>
+      </button>
+              <!--  -->
+               <div class="header-menu">
+        <nav>
+            <ul class="nav">
+                <li><a class="nav__link" href="/">ABOUT US</a></li>
+                <li><a class="nav__link" href="">SERVICES</a></li>
+                <li><a class="nav__link" href="">TESTIMONIALS</a></li>
+                <li><a class="nav__link" href="./contact-us.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+        
+        <div class="checkbox-thumb">
+            <input type="checkbox" id="checkbox" class="checkbox" />
+            <label class="theme-toggle" for="checkbox"></label>
+            <div class="checkbox-circle"></div>
+        </div> 
+    </div>
+  
+    </header>
+
+    <!-- mobile-menu -->
+<div class="menu-container js-menu-container" id="mobile-menu">
+    <button class="button-toggle js-close-menu">
+        <svg class="button-toggle__icone">
+            <use href="./images/symbol-defs.svg#close"></use>
+        </svg>
+    </button>
+    <div class="checkbox-thumb">
+        <input type="checkbox" id="checkbox" class="checkbox" />
+        <label class="theme-toggle" for="checkbox"></label>
+        <div class="checkbox-circle"></div>
+    </div>   
+    <nav>
+        <ul class="mob-menu">
+            <li><a href="./index.html" class="current">ABOUT US</a></li>
+            <li><a href="./portfolio.html" class="current">SERVICES</a></li>
+            <li><a href="" class="current">TESTIMONIALS</a></li>
+            <li><a href="" class="current">CONTACT US</a></li>
+        </ul>
+    </nav>
+    <!-- <div>
+        <ul class="social">
+            <li>
+                <a href="" class="soc">Instagram</a>
+            </li>
+
+            <li>
+                <a href="" class="soc">Twitter</a>
+            </li>
+
+            <li>
+                <a href="" class="soc">Facebook</a>
+            </li>
+
+            <li>
+                <a href="" class="soc">LinkedIn</a>
+            </li>
+        </ul>
+    </div> -->
+</div>
+<h1>fgfhjkl</h1>
+
+<div id="map">ПАПРОЛД</div>
+
+<!-- <script 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYSfb2TewP5hFoubKY2ZmzaPkYgH2ivgs&callback=initMap">
+</script>
+<script src="./js/script.js"></script> -->
+<script>
+    function initMap() {
+    var location = {lat: 40.762, lng: -73.555};
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: location,
+        zoom: 15,
+        styles: [
+            {
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5" // Світло-сірий колір для геометрії
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#666666" // Сірий колір для тексту
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative.locality",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#333333" // Темно-сірий колір для назви місцевості
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#666666" // Сірий колір для назви POI
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5" // Світло-сірий колір для парків
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#333333" // Темно-сірий колір для назви парку
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff" // Білий колір для доріг
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#666666" // Сірий колір для назви доріг
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff" // Білий колір для шосе
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#666666" // Сірий колір для назви шосе
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f2f2f2" // Світло-сірий колір для транспорту
+                    }
+                ]
+            },
+            {
+                "featureType": "transit.station",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#333333" // Темно-сірий колір для назви станції
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff" // Білий колір для води
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#333333" // Темно-сірий колір для назви води
+                    }
+                ]
+            }
+        ]
+    });
+}
+
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYSfb2TewP5hFoubKY2ZmzaPkYgH2ivgs&callback=initMap">
+</script>
+<script src="./js/thema.js"></script>
+</body>
+</html>
