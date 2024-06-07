@@ -306,62 +306,31 @@ body.dark .text {
 
 
 /* acordeeon */
-.question-list-accordion {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin: 20px auto; 
-    border-radius: 5px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.accordion__content {
+  display: none;
 }
 
-.question-list-accordion li {
-    margin-bottom: 10px;
+.accordion__content.active {
+  display: block;
 }
 
-.accordion-header {
-    cursor: pointer;
-    padding: 20px 30px; 
-    border-bottom: 1px solid #ddd;
-    display: flex; 
-    align-items: center; 
-    position: relative; 
-    font-size: 18px; 
-    font-weight: bold; 
-    color: #333; 
+.accordion__header::after {
+  content: "►";
+  float: right;
+  font-size: 18px;
 }
 
-.accordion-header::after {
-    content: '\25B6'; /* Символ стрілки вправо */
-    font-size: 14px;
-    position: absolute; 
-    right: 20px;
-    transition: transform 0.3s ease; /* Додали анімацію */
+.accordion__header.active::after {
+  content: "▲";
 }
-
-.accordion-content.active .accordion-header::after {
-    transform: rotate(-90deg); /* Повернули стрілку у гору */
-}
-
-.accordion-content {
-    padding: 20px; 
-    border-bottom: 1px solid #ddd;
-    display: none;
-    border-top: none; 
-}
-
-.accordion-content.active {
-    display: block; 
-}
-
 
   /* map */
   #map {
-    height: 400px; /* Висота карти */
-    width: 100%; /* Ширина карти, 100% означає, що вона буде розтягнута на всю ширину батьківського контейнера */
-    margin: 0; /* Відступи від країв видаляються, щоб карта була зліплена з країв */
-    padding: 0; /* Внутрішні відступи видаляються, щоб карта була зліплена з країв */
-    border: none; /* Видаляється межа, яка може відображатися навколо карти */
-    border-radius: 5px; /* Закругленість кутів */
-    overflow: hidden; /* Заборона виходу контенту за межі */
+    height: 400px;
+    width: 100%;
+    margin: 0; 
+    padding: 0; 
+    border: none; 
+    border-radius: 5px;
+    overflow: hidden; 
 }
